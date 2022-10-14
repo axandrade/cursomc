@@ -17,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class Categoria implements Serializable{
 	
+	
+	private static final long serialVersionUID = 4074258283665157256L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
