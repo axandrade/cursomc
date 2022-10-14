@@ -1,4 +1,4 @@
-package com.alex.cursomc.dominio;
+package com.alex.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
