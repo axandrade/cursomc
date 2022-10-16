@@ -13,7 +13,7 @@ import com.alex.cursomc.services.exceptions.ObjectNotFoundException;
 public class CategoriaService {
 
 	@Autowired
-	private CategoriaRepository categoriaRepository;	
+	private CategoriaRepository categoriaRepository;
 
 	public Categoria findById(Integer id) {
 		Optional<Categoria> obj = categoriaRepository.findById(id);
@@ -21,8 +21,13 @@ public class CategoriaService {
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
 
-	public Categoria insert(Categoria categoria) {		
+	public Categoria insert(Categoria categoria) {
 		categoria.setId(null);
+		return categoriaRepository.save(categoria);
+	}
+
+	public Categoria update(Categoria categoria) {
+		findById(categoria.getId());
 		return categoriaRepository.save(categoria);
 	}
 
