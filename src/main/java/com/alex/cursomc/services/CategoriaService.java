@@ -25,10 +25,8 @@ public class CategoriaService {
 	}
 	
 	public List<Categoria> findAll() {
-		List<Categoria> list = categoriaRepository.findAll();
-		 
-		return list;
-		
+		return categoriaRepository.findAll();
+
 	}
 
 	public Categoria insert(Categoria categoria) {
