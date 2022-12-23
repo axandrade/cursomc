@@ -55,9 +55,7 @@ public class Cliente implements Serializable{
 	
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name="PERFIS")
-	private Set<Integer> perfis = new HashSet<>();
-	
-	
+	private Set<Integer> perfis = new HashSet<>();	
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")	
@@ -76,6 +74,7 @@ public class Cliente implements Serializable{
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipoCliente = (tipoCliente == null) ? null : tipoCliente.getCodigo();
 		this.senha = senha;
+		addPerfil(Perfil.CLIENTE);
 	}
 
 
